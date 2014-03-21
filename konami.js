@@ -5,7 +5,7 @@
  * Released under the MIT Licence
  * http://opensource.org/licenses/MIT
  *
- * Github:  http://github.com/ConnorAtherton/Konami.js/
+ * Github:  http://github.com/ConnorAtherton/Konami/
  */
 (function(window, document) {
   'use strict';
