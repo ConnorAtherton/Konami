@@ -47,7 +47,6 @@
       }
 
       if(sequence === konamiSequence) {
-        console.log('we have the konami code bitches');
         callback.call(window);
       }
 
@@ -57,13 +56,28 @@
     *
     **/
     init = function(callback) {
-      console.log('init method called');
       addEvent(document, 'keydown', checkForKonami);
     };
 
     init(callback);
   }
 
-  this.Konami = Konami;
+  /**
+  * Exports and modularity
+  **/
+  // commonjs
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Konami;
+  }
+  // browser
+  if (this.navigator) {
+    this.Konami = Konami;
+  }
+  // amd definition
+  if (typeof define === "function" && define.amd) {
+    define('Konami', [], function () {
+      return Konami;
+    });
+  }
 
 }).call(this, window, document, undefined)
